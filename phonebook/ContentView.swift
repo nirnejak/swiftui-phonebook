@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var appTitle = "Hello there!"
-    @State var subtitle = "Building my first SwiftUI app"
+    @State var appTitle = "Contacts"
+    @State var subtitle = "List of people from Breaking Bad"
     
     struct Contact {
         var name: String
