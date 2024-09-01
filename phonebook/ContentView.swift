@@ -7,19 +7,19 @@
 
 import SwiftUI
 
+struct Contact {
+    var name: String
+    var role: String
+    var age: Int
+    
+    var twitter: String
+    var github: String
+    var dribbble: String
+}
+
 struct ContentView: View {
     @State var appTitle = "Contacts"
     @State var subtitle = "List of people from Breaking Bad"
-    
-    struct Contact {
-        var name: String
-        var role: String
-        var age: Int
-        
-        var twitter: String
-        var github: String
-        var dribbble: String
-    }
     
     @State var contacts = [
         Contact(
@@ -75,7 +75,7 @@ struct ContentView: View {
                         .edgesIgnoringSafeArea(.all)
                 )
             ScrollView {
-                VStack(spacing: 1.0) {
+                VStack(spacing: 1) {
                     Text(appTitle)
                         .font(.title)
                         .foregroundColor(Color.white)
@@ -85,7 +85,7 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .padding(.top)
                     
-                    VStack(spacing: -50.0) {
+                    VStack(spacing: -70.0) {
                         ForEach(0 ..< contacts.count, id: \.self) { index in
                             Card(
                                 name: contacts[index].name,
@@ -145,7 +145,6 @@ struct ContentView: View {
                             ), lineWidth: 1.0)
                 )
             .padding()
-            
         }
         .frame(height: 220)
     }
